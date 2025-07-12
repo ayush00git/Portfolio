@@ -1,13 +1,13 @@
-function NavBar() {
+function NavBar({ onChangeVibe, theme }) {
   return (
     <>
       <nav
-        style={{ boxShadow: "7px 7px 10px rgba(0, 0, 0, 0.35)" }}
+        style={{ boxShadow: "7px 7px 10px rgba(0, 0, 0, 0.25)" }}
         className="flex items-center justify-between sticky top-0 w-full min-h-16 h-auto bg-black z-50 pr-8"
       >
         <div className="flex items-center gap-4 ml-8">
           {/* LinkedIn */}
-          <a href="https://www.linkedin.com/in/ayush-kumar-368446246/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/ayush-kumar-368446246/" target="_blank" rel="noopener noreferrer" className="group cursor-pointer transition-transform duration-100 hover:scale-110">
             <svg
               width="25"
               height="25"
@@ -22,7 +22,7 @@ function NavBar() {
             </svg>
           </a>
           {/* Github */}
-          <a href="https://github.com/ayush00git" target="_blank" rel="noopener noreferrer">  
+          <a href="https://github.com/ayush00git" target="_blank" rel="noopener noreferrer" className="group cursor-pointer transition-transform duration-100 hover:scale-110">  
             <svg
               width="25"
               height="25"
@@ -37,7 +37,7 @@ function NavBar() {
             </svg>
           </a>
           {/* Instagram */}
-          <a href="https://www.instagram.com/ayyush_z/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/ayyush_z/" target="_blank" rel="noopener noreferrer" className="group cursor-pointer transition-transform duration-100 hover:scale-110">
             <svg
               width="25"
               height="25"
@@ -60,13 +60,14 @@ function NavBar() {
         </div>
 
         {/* terminal name */}
-        <div className="text-xl font-mono text-[rgba(255,255,255,0.5)]">
-          ayush_kumar@portfolio:~
+        <div className={`text-xl font-mono ${theme === "cyberpunk" ? "text-[#FFEA00]" : "text-[rgba(255,255,255,0.5)]"}`}>
+          ayush_kumar@portfolio:<span className={theme === "cyberpunk" ? "text-[#FF0090]" : ""}>~</span>
         </div>
 
         <div className="text-[white] font-bold">
-          <button className="border-2 px-6 py-2 rounded-full cursor-pointer">
-            View
+          <button className="border-2 px-6 py-2 rounded-full cursor-pointer transition duration-200 
+               hover:bg-white hover:text-black hover:border-[#000]" onClick={onChangeVibe}>
+            Change-vibe
           </button>
         </div>
       </nav>

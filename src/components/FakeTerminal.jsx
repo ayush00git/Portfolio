@@ -14,6 +14,7 @@ Available commands:
   cd linkedin    - Visit my linkedin profile
   cd github      - Visit my github profile
   cd instagram   - Visit my instagram profile
+  ls             - available docs
   clear          - Clear the screen
   help           - Show available commands
 `,
@@ -32,7 +33,9 @@ Now diving into DevOps and open source — excited for what’s next.
   "cat projects": `1. YapSpace  
 A real-time blog webapp — built with Node.js, Express, MongoDB and ejs.  
 📈 Hit 3000+ unique users in the first week of launch.  
-🔗 Live: https://yapspace.vercel.app
+🔗 Live: https://yap.deznov.space/
+or simply type-in cd yapspace to see my project
+
 
 2. DezNov *(in development)*  
 A design-sharing platform focused on clean UI, feedback loops, and creator-first experience.  
@@ -75,11 +78,11 @@ Tools & DevOps:
   or by email: ayush.2007.iit@gmail.com 
   [leave that "iit" thing, this id was created during my JEE prep :( ]
   `,
-
+  "ls": `about skills projects contact`,
   help: `Available commands: welcome, cat about, cat projects, cat skills, cat contact, help, clear`,
 };
 
-export default function FakeTerminal() {
+export default function FakeTerminal({ theme }) {
   const [history, setHistory] = useState([]);
   const [input, setInput] = useState("");
   const [historyIndex, setHistoryIndex] = useState(-1);
@@ -141,6 +144,11 @@ export default function FakeTerminal() {
     }
     if (command === "cd instagram") {
       window.open("https://www.instagram.com/ayyush_z/", "_blank");
+      onDone();
+      return;
+    }
+    if (command === "cd yapspace") {
+      window.open("https://yap.deznov.space/", "_blank");
       onDone();
       return;
     }
@@ -220,34 +228,27 @@ export default function FakeTerminal() {
 
   return (
     <div
-      className="w-full h-full p-4 overflow-y-auto text-green-500 font-mono text-sm pt-16"
-       style={{
-    backgroundColor: "#191919",
-    overflowY: "auto",
-    scrollbarWidth: "none",      // Firefox
-    msOverflowStyle: "none",     // IE/Edge
-  }}
-  ref={containerRef}
->
-  <style>
-    {`
-      div::-webkit-scrollbar {
-        display: none;
-      }
-    `}
-  </style>
+      className={`w-full h-full p-4 font-mono text-sm pt-16 ${theme === "cyberpunk" ? "bg-gradient-to-b from-[#0D0A1A] to-[#1A0F2A]" : "bg-[#101010]"}`}
+      style={theme === "cyberpunk" ? { scrollbarWidth: "none", msOverflowStyle: "none" } : { backgroundColor: "#101010", overflowY: "auto", scrollbarWidth: "none", msOverflowStyle: "none" }}
+      ref={containerRef}
+    >
+      <style>
+        {`
+          div::-webkit-scrollbar { display: none; }
+        `}
+      </style>
       {history.map((item, idx) => (
         <div key={item.id} className="mb-2">
           <div>
-            <span className="text-green-400">ayush_kumar@portfolio:</span>
-            <span className="text-white">~$</span> {item.cmd}
+            <span className={theme === "cyberpunk" ? "text-[#FFEA00]" : "text-green-400"}>ayush_kumar@portfolio:</span>
+            <span className={theme === "cyberpunk" ? "text-[#FF0090]" : "text-white"}>~$</span> {item.cmd}
           </div>
-          <pre className="text-gray-300 whitespace-pre-wrap">{item.output}</pre>
+          <pre className={theme === "cyberpunk" ? "text-[#B2F5EA] whitespace-pre-wrap" : "text-gray-300 whitespace-pre-wrap"}>{item.output}</pre>
         </div>
       ))}
 
       {isStreaming && (
-        <div className="text-gray-300 whitespace-pre-wrap mb-2">
+        <div className={theme === "cyberpunk" ? "text-[#B2F5EA] whitespace-pre-wrap mb-2" : "text-gray-300 whitespace-pre-wrap mb-2"}>
           {currentOutput}
         </div>
       )}
@@ -255,16 +256,16 @@ export default function FakeTerminal() {
       {/* Only show input when not streaming */}
       {!isStreaming && (
         <div className="flex">
-          <span className="text-green-400">ayush_kumar@portfolio:</span>
-          <span className="text-white">~$</span>
+          <span className={theme === "cyberpunk" ? "text-[#FFEA00]" : "text-green-400"}>ayush_kumar@portfolio:</span>
+          <span className={theme === "cyberpunk" ? "text-[#FF0090]" : "text-white"}>~$</span>
           <input
             ref={inputRef}
-            className="bg-transparent outline-none text-white ml-1 w-full caret-transparent"
+            className={`bg-transparent outline-none ml-1 w-full ${theme === "cyberpunk" ? "text-[#00FF9F]" : "text-white"}`}
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
             autoFocus
-            style={{ caretColor: "#22c55e" }}
+            style={{ caretColor: theme === "cyberpunk" ? "#FF00F7" : "#22c55e" }}
           />
         </div>
       )}
