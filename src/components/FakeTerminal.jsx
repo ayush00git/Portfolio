@@ -17,6 +17,8 @@ Available commands:
   ls             - available docs
   clear          - Clear the screen
   help           - Show available commands
+
+  Tip: Open in laptop for a nice experience
 `,
   // about script
   "cat about": `I'm Ayush — a backend developer from Kangra, Himachal Pradesh.

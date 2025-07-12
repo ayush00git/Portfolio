@@ -5,7 +5,8 @@ function NavBar({ onChangeVibe, theme }) {
         style={{ boxShadow: "7px 7px 10px rgba(0, 0, 0, 0.25)" }}
         className="flex items-center justify-between sticky top-0 w-full min-h-16 h-auto bg-black z-50 pr-8"
       >
-        <div className="flex items-center gap-4 ml-8">
+        {/* Social icons - hidden on mobile */}
+        <div className="flex items-center gap-4 ml-8 hidden md:flex">
           {/* LinkedIn */}
           <a href="https://www.linkedin.com/in/ayush-kumar-368446246/" target="_blank" rel="noopener noreferrer" className="group cursor-pointer transition-transform duration-100 hover:scale-110">
             <svg
@@ -60,12 +61,12 @@ function NavBar({ onChangeVibe, theme }) {
         </div>
 
         {/* terminal name */}
-        <div className={`text-xl font-mono ${theme === "cyberpunk" ? "text-[#FFEA00]" : "text-[rgba(255,255,255,0.5)]"}`}>
+        <div className={`font-mono ${theme === "cyberpunk" ? "text-[#FFEA00]" : "text-[rgba(255,255,255,0.5)]"} text-base md:text-xl pl-4`}>
           ayush_kumar@portfolio:<span className={theme === "cyberpunk" ? "text-[#FF0090]" : ""}>~</span>
         </div>
 
         <div className="text-[white] font-bold">
-          <button className="border-2 px-6 py-2 rounded-full cursor-pointer transition duration-200 
+          <button className="border-2 px-4 py-1 rounded-full cursor-pointer transition duration-200 text-sm md:text-base 
                hover:bg-white hover:text-black hover:border-[#000]" onClick={onChangeVibe}>
             Change-vibe
           </button>
