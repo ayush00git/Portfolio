@@ -10,7 +10,7 @@ Available commands:
   cat about      - more about me
   cat skills     - View my tech stack
   cat projects   - Explore my projects
-  cd contact     - Connect wth me
+  cd contact     - Connect with me
   cd linkedin    - Visit my linkedin profile
   cd github      - Visit my github profile
   cd instagram   - Visit my instagram profile
@@ -21,15 +21,16 @@ Available commands:
   Tip: Open in laptop for a nice experience
 `,
   // about script
-  "cat about": `I'm Ayush — a backend developer from Kangra, Himachal Pradesh.
+  "cat about": `I'm Ayush — a backend developer and a ui/ux designer from Kangra, Himachal Pradesh.
 
-I love building clean systems, designing smooth interfaces on Figma, and vibing to music while doing both. I'm into Node.js, Express, MongoDB, and Docker, with some frontend chops using HTML, CSS, and Tailwind.
+I love building clean systems, designing smooth interfaces on Figma, and vibing to music while doing both. I'm into Node.js, Express.js, MongoDB, and Docker, with some frontend chops using HTML, CSS, and Tailwind.
 
-My project *YapSpace* hit 3K+ unique users in its first week 🚀  
-Currently working on *DezNov* — a design-sharing platform still in the works.
+I love exploring new technologies and am currently passionate about DevOps and contributing to open-source projects.
+
+I'm also an contributor to expressjs.com
 
 Big on music. Big on design.  
-Now diving into DevOps and open source — excited for what’s next.
+
 `,
   // projects script
   "cat projects": `1. YapSpace  
@@ -80,7 +81,7 @@ Tools & DevOps:
   or by email: ayush.2007.iit@gmail.com 
   [leave that "iit" thing, this id was created during my JEE prep :( ]
   `,
-  "ls": `about skills projects contact`,
+  "ls": `'about' 'skills' 'projects' 'contact'`,
   help: `Available commands: welcome, cat about, cat projects, cat skills, cat contact, help, clear`,
 };
 
@@ -111,7 +112,9 @@ export default function FakeTerminal({ theme }) {
   }, []);
 
   useEffect(() => {
-    containerRef.current?.scrollTo(0, containerRef.current.scrollHeight);
+    if (containerRef.current) {
+      containerRef.current.scrollTop = containerRef.current.scrollHeight;
+    }
   }, [history, currentOutput]);
 
   const handleCommand = (cmd, onDone = () => {}) => {
@@ -231,7 +234,12 @@ export default function FakeTerminal({ theme }) {
   return (
     <div
       className={`w-full h-full p-4 font-mono text-sm pt-16 ${theme === "cyberpunk" ? "bg-gradient-to-b from-[#0D0A1A] to-[#1A0F2A]" : "bg-[#101010]"}`}
-      style={theme === "cyberpunk" ? { scrollbarWidth: "none", msOverflowStyle: "none" } : { backgroundColor: "#101010", overflowY: "auto", scrollbarWidth: "none", msOverflowStyle: "none" }}
+      style={{
+        background: theme === "cyberpunk" ? "linear-gradient(to bottom, #0D0A1A, #1A0F2A)" : "#101010",
+        overflowY: "auto",
+        scrollbarWidth: "none",
+        msOverflowStyle: "none"
+      }}
       ref={containerRef}
     >
       <style>
