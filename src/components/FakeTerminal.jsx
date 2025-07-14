@@ -134,14 +134,10 @@ export default function FakeTerminal({ theme }) {
     setCommandHistory((prev) => [...prev, cmd]);
     const command = cmd.toLowerCase().trim();
     if (command === "cd linkedin") {
-      window.open(
-        "https://www.linkedin.com/in/ayush-kumar-368446246/",
-        "_blank"
-      );
+      window.open("https://www.linkedin.com/in/ayush-kumar-368446246/","_blank");
       onDone();
       return;
     }
-
     if (command === "cd github") {
       window.open("https://github.com/ayush00git", "_blank");
       onDone();
