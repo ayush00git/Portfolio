@@ -65,9 +65,10 @@ function NavBar({ onChangeVibe, theme }) {
           ayush_kumar@portfolio:<span className={theme === "cyberpunk" ? "text-[#FF0090]" : ""}>~</span>
         </div>
 
+        {/* change-vibe button */}
         <div className="text-[white] font-bold">
-          <button className="border-2 px-4 py-1 rounded-full cursor-pointer transition duration-200 text-sm md:text-base 
-               hover:bg-white hover:text-black hover:border-[#000]" onClick={onChangeVibe}>
+          <button className="border-none px-4 py-1 rounded-md cursor-pointer transition duration-150 text-sm md:text-base 
+               hover:bg-[rgba(255,255,255,1)] hover:text-black" onClick={onChangeVibe}>
             Change-vibe
           </button>
         </div>

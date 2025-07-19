@@ -7,29 +7,31 @@ const COMMANDS = {
 Type "help" to get started.
 
 Available commands:
-  cat about      - more about me
-  cat skills     - View my tech stack
-  cat projects   - Explore my projects
-  cd contact     - Connect with me
-  cd linkedin    - Visit my linkedin profile
-  cd github      - Visit my github profile
-  cd instagram   - Visit my instagram profile
-  ls             - available docs
-  clear          - Clear the screen
-  help           - Show available commands
+  cat about         - more about me
+  cat skills        - View my tech stack
+  cat projects      - Explore my projects
+  cat achievements  - View my achievements
+  cd contact        - Connect with me
+  cd linkedin       - Visit my linkedin profile
+  cd github         - Visit my github profile
+  cd instagram      - Visit my instagram profile
+  ls                - available docs
+  clear             - Clear the screen
+  help              - Show available commands
 
-  Tip: Open in laptop for a nice experience
 `,
   // about script
-  "cat about": `I'm Ayush — a backend developer and a ui/ux designer from Kangra, Himachal Pradesh.
+  "cat about": 
+`Hey, I’m Ayush — a backend developer who also dabbles in UI/UX design with Figma. 
+I work mostly with tools like Node.js, Express, and MongoDB, and I’m pretty comfortable using 
+Docker to containerize my work. I’ve been spending more time learning DevOps practices and exploring the 
+open-source world — something I’m genuinely excited about.
 
-I love building clean systems, designing smooth interfaces on Figma, and vibing to music while doing both. I'm into Node.js, Express.js, MongoDB, and Docker, with some frontend chops using HTML, CSS, and Tailwind.
+(I'm also an contributor to expressjs.com)
 
-I love exploring new technologies and am currently passionate about DevOps and contributing to open-source projects.
-
-I'm also an contributor to expressjs.com
-
-Big on music. Big on design.  
+Lately, I’ve also been exploring cybersecurity and generative AI — both are incredibly exciting fields that 
+open up a lot of possibilities. I like building things with a chill mindset — learning consistently, experimenting 
+with ideas, and always trying to make something better than before.
 
 `,
   // projects script
@@ -41,20 +43,20 @@ or simply type-in cd yapspace to see my project
 
 
 2. DezNov *(in development)*  
-A design-sharing platform focused on clean UI, feedback loops, and creator-first experience.  
+A project-sharing platform focused on clean UI, feedback loops, and creator-first experience.  
 Built with: Figma + Tailwind CSS + Node.js backend + React.js(vibe coding).  
 🔗 Live: Coming soon...
 
 3. Terminal Portfolio  
 A CLI-inspired personal site built with React, Tailwind, and custom command logic.  
 Accepts real commands like 'cat about', 'cd linkedin', and more.  
-Its designed on Figma and the React code is vibe coded ;) 
+Its designed on Figma, coded with tailwind and the React code is vibe coded ;) 
 🔗 You’re using it right now :)
 
 More dropping soon...`,
   // skills script
   "cat skills": `Languages:
-- C, Python, JavaScript
+- C, C++, Python, JavaScript
 
 Frontend:
 - HTML, CSS, Tailwind CSS
@@ -69,10 +71,13 @@ Tools & DevOps:
 - Git & GitHub (one of the contributors to ExpressJS.com)
 - Postman for API testing
 - Linux/CLI — comfortable & efficient
+- Figma for UI/UX designing
 
 🎯 Strongest In:
 - Backend Architecture
-- Docker & Deployment Workflows`,
+- Docker & Deployment Workflows
+- UI/UX designing using figma
+`,
   // contact script
   "cat contact": `Reach out to me on-
   LinkedIn: cd linkedin 
@@ -80,6 +85,14 @@ Tools & DevOps:
   Instagram: cd instagram 
   or by email: ayush.2007.iit@gmail.com 
   [leave that "iit" thing, this id was created during my JEE prep :( ]
+  `,
+  "cat achievements":`
+Winner of Best Beginner Hack – Electrothon 7.0 (National Level Hackathon)
+Built MotionEye, a hardware-based safety solution designed to assist individuals with Alzheimer's. 
+It detects falls using motion sensors and immediately alerts caregivers — ensuring timely support 
+and reducing risks for patients.
+
+More coming soon :) ........
   `,
   "ls": `'about' 'skills' 'projects' 'contact'`,
   help: `Available commands: welcome, cat about, cat projects, cat skills, cat contact, help, clear`,
