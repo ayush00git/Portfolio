@@ -23,10 +23,10 @@ Available commands:
   // about script
   "cat about": 
 `Hey, I’m Ayush — a backend developer who also dabbles in UI/UX design with Figma. 
+
 I work mostly with tools like Node.js, Express, and MongoDB, and I’m pretty comfortable using 
 Docker to containerize my work. I’ve been spending more time learning DevOps practices and exploring the 
 open-source world — something I’m genuinely excited about.
-
 (I'm also an contributor to expressjs.com)
 
 Lately, I’ve also been exploring cybersecurity and generative AI — both are incredibly exciting fields that 
@@ -52,6 +52,12 @@ A CLI-inspired personal site built with React, Tailwind, and custom command logi
 Accepts real commands like 'cat about', 'cd linkedin', and more.  
 Its designed on Figma, coded with tailwind and the React code is vibe coded ;) 
 🔗 You’re using it right now :)
+
+4. MotionEye (National Hackathon winning project)
+Built MotionEye, a hardware-based safety solution designed to assist individuals with Alzheimer's. 
+It detects falls using motion sensors and immediately alerts caregivers — ensuring timely support 
+and reducing risks for patients.
+🔗 Have a look at the project, just type in this command - cd motioneye
 
 More dropping soon...`,
   // skills script
@@ -85,17 +91,20 @@ Tools & DevOps:
   Instagram: cd instagram 
   or by email: ayush.2007.iit@gmail.com 
   [leave that "iit" thing, this id was created during my JEE prep :( ]
+
+  just type-in 'cd email' to contact me
   `,
   "cat achievements":`
 Winner of Best Beginner Hack – Electrothon 7.0 (National Level Hackathon)
 Built MotionEye, a hardware-based safety solution designed to assist individuals with Alzheimer's. 
 It detects falls using motion sensors and immediately alerts caregivers — ensuring timely support 
 and reducing risks for patients.
+Have a look at the project, just type in this command - cd motioneye
 
 More coming soon :) ........
   `,
   "ls": `'about' 'skills' 'projects' 'contact'`,
-  help: `Available commands: welcome, cat about, cat projects, cat skills, cat contact, help, clear`,
+  help: `Available commands: welcome, cat about, cat projects, cat skills, cat achievements, cat contact, cd instagram, cd linkedin, cd github, help, clear`,
 };
 
 export default function FakeTerminal({ theme }) {
@@ -163,6 +172,16 @@ export default function FakeTerminal({ theme }) {
     }
     if (command === "cd yapspace") {
       window.open("https://yap.deznov.space/", "_blank");
+      onDone();
+      return;
+    }
+    if (command === "cd motioneye") {
+      window.open("https://github.com/CodeWithAlvin/fallDetection", "_blank");
+      onDone();
+      return;
+    }
+    if (command === "cd email") {
+      window.open("https://mail.google.com/mail/?view=cm&fs=1&to=ayush.2007.iit@gmail.com", "_blank");
       onDone();
       return;
     }

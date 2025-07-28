@@ -15,7 +15,7 @@ function App() {
         <div className="absolute w-full">
           <NavBar onChangeVibe={handleChangeVibe} theme={theme} />
         </div>
-        <div className={`relative md:w-2/5 w-full border-b-1 md:border-b-0 md:border-r-1 ${theme === "cyberpunk" ? "border-[#FF00F7] bg-[#0D0A1A]" : "border-[rgba(71,216,61,0.5)] bg-[#0d0d0d]"} overflow-hidden min-h-[450px] md:min-h-0`}>
+        <div className={`relative md:w-2/5 w-full border-b-1 md:border-b-0 md:border-r-1 ${theme === "cyberpunk" ? "border-[#FF00F7] bg-[#0D0A1A]" : "border-[rgba(71,216,61,0.5)] bg-[#0d0d0d]"} overflow-hidden min-h-[650px] md:min-h-0`}>
           <div className="absolute inset-0 h-full">
             <Lanyard position={[0, 0, 20]} gravity={[0, -50, 0]} />
           </div>
