@@ -35,29 +35,31 @@ with ideas, and always trying to make something better than before.
 
 `,
   // projects script
-  "cat projects": `1. YapSpace  
+  "cat projects": `1. MotionEye (National Hackathon winning project)
+Built MotionEye, a hardware-based safety solution designed to assist individuals with Alzheimer's. 
+It detects falls using motion sensors and immediately alerts caregivers — ensuring timely support 
+and reducing risks for patients.
+🔗 Have a look at the project, just type in this command - 'cd motioneye'
+
+2. YapSpace  
 A real-time blog webapp — built with Node.js, Express, MongoDB and ejs.  
 📈 Hit 3000+ unique users in the first week of launch.  
 🔗 Live: https://yap.deznov.space/
-or simply type-in cd yapspace to see my project
+or simply type-in 'cd yapspace' to see my project
 
 
-2. DezNov *(in development)*  
+3. DezNov *(in development)*  
 A project-sharing platform focused on clean UI, feedback loops, and creator-first experience.  
 Built with: Figma + Tailwind CSS + Node.js backend + React.js(vibe coding).  
 🔗 Live: Coming soon...
 
-3. Terminal Portfolio  
+4. Terminal Portfolio  
 A CLI-inspired personal site built with React, Tailwind, and custom command logic.  
 Accepts real commands like 'cat about', 'cd linkedin', and more.  
 Its designed on Figma, coded with tailwind and the React code is vibe coded ;) 
 🔗 You’re using it right now :)
 
-4. MotionEye (National Hackathon winning project)
-Built MotionEye, a hardware-based safety solution designed to assist individuals with Alzheimer's. 
-It detects falls using motion sensors and immediately alerts caregivers — ensuring timely support 
-and reducing risks for patients.
-🔗 Have a look at the project, just type in this command - cd motioneye
+
 
 More dropping soon...`,
   // skills script
@@ -99,11 +101,11 @@ Winner of Best Beginner Hack – Electrothon 7.0 (National Level Hackathon)
 Built MotionEye, a hardware-based safety solution designed to assist individuals with Alzheimer's. 
 It detects falls using motion sensors and immediately alerts caregivers — ensuring timely support 
 and reducing risks for patients.
-Have a look at the project, just type in this command - cd motioneye
+Have a look at the project, just type in this command - 'cd motioneye'
 
 More coming soon :) ........
   `,
-  "ls": `'about' 'skills' 'projects' 'contact'`,
+  "ls": `'about' 'skills' 'projects' 'achievements' 'contact'`,
   help: `Available commands: welcome, cat about, cat projects, cat skills, cat achievements, cat contact, cd instagram, cd linkedin, cd github, help, clear`,
 };
 

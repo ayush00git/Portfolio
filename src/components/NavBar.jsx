@@ -67,8 +67,8 @@ function NavBar({ onChangeVibe, theme }) {
 
         {/* change-vibe button */}
         <div className="text-[white] font-bold">
-          <button className="border-none px-4 py-1 rounded-md cursor-pointer transition duration-150 text-sm md:text-base 
-               hover:bg-[rgba(255,255,255,1)] hover:text-black" onClick={onChangeVibe}>
+          <button className="border-1 px-4 py-2 rounded-full bg-black cursor-pointer transition duration-200 text-sm md:text-base 
+               hover:bg-gray-800 hover:text-white" onClick={onChangeVibe}>
             Change-vibe
           </button>
         </div>
