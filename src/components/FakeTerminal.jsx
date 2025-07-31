@@ -15,6 +15,7 @@ Available commands:
   cd linkedin       - Visit my linkedin profile
   cd github         - Visit my github profile
   cd instagram      - Visit my instagram profile
+  git repo           - Check-out the repo <======>
   ls                - available docs
   clear             - Clear the screen
   help              - Show available commands
@@ -184,6 +185,11 @@ export default function FakeTerminal({ theme }) {
     }
     if (command === "cd email") {
       window.open("https://mail.google.com/mail/?view=cm&fs=1&to=ayush.2007.iit@gmail.com", "_blank");
+      onDone();
+      return;
+    }
+    if (command === "git repo") {
+      window.open("https://github.com/ayush00git/Portfolio", "_blank");
       onDone();
       return;
     }
