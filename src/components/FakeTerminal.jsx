@@ -215,7 +215,7 @@ export default function FakeTerminal({ theme }) {
         setIsStreaming(false);
         onDone();
       }
-    }, 15);
+    }, 5);
   };
 
   const handleKeyDown = (e) => {
