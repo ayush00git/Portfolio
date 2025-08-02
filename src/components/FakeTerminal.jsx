@@ -195,7 +195,7 @@ export default function FakeTerminal({ theme }) {
     }
 
     const output =
-      COMMANDS[cmd.toLowerCase()] ||
+      COMMANDS[command] ||
       `Command not found: ${cmd}\nType 'help' to see available commands.`;
 
     // Push command first with empty output
